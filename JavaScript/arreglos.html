@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+			var amigos = ["amigo1","amigo2","amigo3"];
+			var amigos2 = ["persona1","persona2","persona3"];
+			document.write(amigos[0]);
+
+			//remplazar
+			amigos[0]="amigo4";
+
+			document.write(amigos[0]);
+
+			document.write("<br>"+amigos.length);
+			//agregar elemnto a un array
+			amigos[amigos.length] = "amigo4";
+			amigos.push("amigo5","amigo6","amigo7");
+
+			//Eliminar ultimo elemanto array
+			amigos.pop();
+
+			//concatenar arreglos
+			var amigos3 = amigos.concat(amigos2);
+			document.write("<br>"+amigos3);
+
+			//sepaara elementos
+			amigos.join(" : ");
+			document.write("<br>"+amigos.join(" - "));
+
+			//ordenas elementos por alfabeto
+			var ordenado = amigos.sort();
+			document.write("<br>"+ordenado);
+	</script>
+
+
+</body>
+</html>
