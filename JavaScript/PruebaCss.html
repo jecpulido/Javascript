@@ -1,0 +1,50 @@
+<html>
+ 
+<body>
+    <style>
+        #testbox {
+            opacity: 0;
+            width: 300px;
+            height: 0px;
+            background-color: red;
+            }
+ 
+        #testbox.test {
+            opacity: 1;
+            height: 300px;
+            transition: opacity 1s ease-in-out, height 0.5s ease-in-out;
+            }
+    </style>
+    <script type="text/javascript">
+        document.getElementById("testbox").addEventListener("transitionend", function() {
+    alert('la transición se terminó');
+    });
+
+        var element=document.getElementById("testbox");
+ 
+        element.addEventListener('webkitTransitionEnd', callfunction, false);
+        element.addEventListener('oTransitionEnd', callfunction, false);
+        element.addEventListener('transitionend', callfunction, false);
+        element.addEventListener('msTransitionEnd', callfunction, false);
+         
+        function callfunction() {
+           alert('la transición se terminó');
+        }
+    </script>
+    <input type='button' value='Hola' onclick="javascript: document.getElementById('testbox').className='test';"/>
+ 
+    <div id='testbox'>
+        <form>
+            <fieldset>
+                <legend>Ejemplo</legend>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre">
+                <br><br>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido">
+            </fieldset>
+        </form>
+    </div>
+</body>
+ 
+</html>

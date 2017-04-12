@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css"></style>
+<script type="text/javascript">
+	function startDrag(event) {
+    event.dataTransfer.setData( "id", ev.target.id );
+    }
+ 
+	function stopDrag(event) {
+	    }
+	    function dropDrag(event) {
+	    alert( "Soltado elemento #"+event.dataTransfer.getData( "id" ));
+	 
+	    event.preventDefault();
+	    }
+	 
+	function dragoverDrag(event) {
+	    /* preventDefault() para permitir soltar */
+	    event.preventDefault();
+	    }
+	    function dropDrag(event) {
+    var files = event.dataTransfer.files;
+    for (var i = 0, f; f = files[i]; i++) {
+        alert( files[i].name+"("+files[i].size+" bytes)" );
+        }
+ 
+    event.preventDefault();
+    }
+</script>
+<body>
+	<h3>Elementos</h3>
+ 
+<img id='img1' src='css.jpg' draggable='true' ondragstart='startDrag(event)' ondragend='stopDrag(event)' />
+<img id='img2' src='css.jpg' draggable='true' ondragstart='startDrag(event)' ondragend='stopDrag(event)' />
+
+	<h3>Soltar</h3>
+ 
+<div
+    style='margin: 15px; padding: 15px; background-color: #ccc; border: 1px #999 dotted;'
+    ondrop='dropDrag(event)'
+    ondragover='dragoverDrag(event)'
+    >
+</div>
+
+</body>
+</html>
